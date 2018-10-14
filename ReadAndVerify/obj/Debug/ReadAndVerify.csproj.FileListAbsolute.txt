@@ -1,0 +1,15 @@
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\bin\Debug\ReadAndVerify.exe.config
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\bin\Debug\ReadAndVerify.exe
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\bin\Debug\ReadAndVerify.pdb
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.csprojAssemblyReference.cache
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\MainWindow.g.cs
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\App.g.cs
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify_MarkupCompile.cache
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify_MarkupCompile.lref
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\MainWindow.baml
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.g.resources
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.Properties.Resources.resources
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.csproj.GenerateResource.cache
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.csproj.CoreCompileInputs.cache
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.exe
+C:\Users\shebanits.vitaliy\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.pdb

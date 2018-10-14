@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Projects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Project>
+    <Title>Мой проект</Title>
+    <StartDate>2018-10-10T00:00:00</StartDate>
+    <FinishDate>2018-10-30T00:00:00</FinishDate>
+  </Project>
+  <Project>
+    <Title>Мой проект 2</Title>
+    <StartDate>2018-10-01T00:00:00</StartDate>
+    <FinishDate>2018-10-10T00:00:00</FinishDate>
+  </Project>
+  <Project>
+    <Title>Мой проект 3</Title>
+    <StartDate>2018-10-30T00:00:00</StartDate>
+    <FinishDate>2018-12-20T00:00:00</FinishDate>
+  </Project>
+</Projects>
