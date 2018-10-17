@@ -10,8 +10,7 @@
     <Window.Resources>
 
         <DataTemplate x:Key="ItemTemplate">
-            <!--<TextBlock Text="{Binding}" Foreground="red" />-->
-            <ProgressBar Value="{Binding}" Width="100" Height="20"/>
+            <ProgressBar Value="{Binding Path=DayOfProject}" Width="100" Height="20" />
         </DataTemplate>
 
         <DataTemplate x:Key="SelectedTemplate">
@@ -20,14 +19,16 @@
 
         <Style TargetType="{x:Type ListBoxItem}" x:Key="ContainerStyle">
             <Setter Property="ContentTemplate" Value="{StaticResource ItemTemplate}" />
-            <!--<Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="ContentTemplate" Value="{StaticResource SelectedTemplate}" />
-                </Trigger>
-            </Style.Triggers>-->
         </Style>
 
     </Window.Resources>
-    <ListBox Name="lstCars" Margin="5" ItemContainerStyle="{StaticResource ContainerStyle}">
-    </ListBox>
+  <Grid>
+    <StackPanel>
+      <ListBox Name="progressBarList" Margin="5" ItemContainerStyle="{StaticResource ContainerStyle}"/>
+    </StackPanel>
+  </Grid>
+    
 </Window>
+
+<!--<ListBox Name="lstCars" Margin="5" ItemContainerStyle="{StaticResource ContainerStyle}">
+      </ListBox>-->

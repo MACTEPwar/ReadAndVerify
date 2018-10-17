@@ -21,6 +21,8 @@ namespace ReadAndVerify
         public DateTime StartDateForProject { get; set; }
         [XmlElement("FinishDate")]
         public DateTime FinishDateForProject { get; set; }
+        [XmlElement]
+        public double DayOfProject { get; set; }
 
         public Project() { }
 
@@ -29,6 +31,7 @@ namespace ReadAndVerify
             Title = title;
             StartDateForProject = startDate;
             FinishDateForProject = finishDate;
+            DayOfProject = 10;
         }
 
         public static List<Project> GetProjects()
@@ -39,11 +42,23 @@ namespace ReadAndVerify
 
             XmlSerializer xSeriz = new XmlSerializer(typeof(Project[]),xRoot);
             List<Project> projects = new List<Project>();
+            //List<Project> _newprojects = new List<Project>();
             using (FileStream fs = new FileStream(pathToFile, FileMode.OpenOrCreate))
             {
                 Project[] newprojects = (Project[])xSeriz.Deserialize(fs);
-                return newprojects.Cast<Project>().ToList();
+                projects = newprojects.Cast<Project>().ToList();
             }
+            foreach (Project project in projects)
+            {
+                // Сколько всего дней для проекта (100%)
+                int maxDate = project.FinishDateForProject.Subtract(project.StartDateForProject).Days;
+                // Сколько прошо дней (кол-во)
+                int curentDate = DateTime.Now.Subtract(project.StartDateForProject).Days;
+                // Текущий процен пройденых дней
+                project.DayOfProject = curentDate * 100 / maxDate ;
+
+            }
+            return projects;
         }
 
         public static void Create(List<Project> projects)

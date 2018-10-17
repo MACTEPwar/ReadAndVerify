@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +26,7 @@ namespace ReadAndVerify
 
         public MainWindow()
         {
-            
+
             InitializeComponent();
             //Project.Create(new List<Project> {
             //    new Project("Мой проект 2", DateTime.Parse("01.10.2018"), DateTime.Parse("10.10.2018")),
@@ -33,11 +35,8 @@ namespace ReadAndVerify
             //_projects = Project.GetProjects();
             //this.DataContext = _projects;
             //this.Resources.Add("Projects", _projects);
-            //lstCars.ItemTemplate = new DataTemplate();
-            //DataTemplate asd = new DataTemplate();
-            lstCars.ItemsSource = _projects;
-            //List<Project> Projects = Project.GetProjects(); 
-            CreateDynamicGridView(); 
+            progressBarList.ItemsSource = _projects;
+            CreateDynamicGridView();
         }
 
         private void CreateDynamicGridView()

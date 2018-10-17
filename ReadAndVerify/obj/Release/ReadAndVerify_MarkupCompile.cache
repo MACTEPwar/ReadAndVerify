@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Вредина\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\
+C:\Users\Вредина\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Release\
 ReadAndVerify
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Вредина\Source\Repos\ReadAndVerify\ReadAndVerify\App.xaml
 11151548125
 
@@ -16,5 +16,5 @@ C:\Users\Вредина\Source\Repos\ReadAndVerify\ReadAndVerify\App.xaml
 13781053478
 MainWindow.xaml;
 
-False
+True
 
