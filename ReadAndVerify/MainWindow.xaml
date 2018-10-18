@@ -6,29 +6,35 @@
         xmlns:local="clr-namespace:ReadAndVerify"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#20201f" Foreground="White">
+        Title="MainWindow" Height="450" Width="800" Background="#20201f" Foreground="White" WindowState="Maximized">
     <Window.Resources>
-
-        <DataTemplate x:Key="ItemTemplate">
-            <ProgressBar Value="{Binding Path=DayOfProject}" Width="100" Height="20" />
-        </DataTemplate>
-
-        <DataTemplate x:Key="SelectedTemplate">
-            <TextBlock Text="{Binding Path=Title}" Foreground="White" />
-        </DataTemplate>
-
-        <Style TargetType="{x:Type ListBoxItem}" x:Key="ContainerStyle">
-            <Setter Property="ContentTemplate" Value="{StaticResource ItemTemplate}" />
-        </Style>
-
     </Window.Resources>
-  <Grid>
-    <StackPanel>
-      <ListBox Name="progressBarList" Margin="5" ItemContainerStyle="{StaticResource ContainerStyle}"/>
-    </StackPanel>
-  </Grid>
-    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <ListBox Name="progressBarList" IsEnabled="True" HorizontalContentAlignment="Stretch" Background="#20201f" Grid.Column="1" Margin="40 10 40 0" BorderBrush="#FF20201F">
+                <ListBox.Resources>
+                    <Style TargetType="ListBoxItem">
+                        <Style.Setters>
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </Style.Setters>
+                    </Style>
+                </ListBox.Resources>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0 5 0 5">
+                            <TextBlock Text="{Binding Path=Key, Mode=OneWay}" Margin="0 0 0 10" Foreground="White"/>
+                            <ProgressBar  Value="{Binding Path=Value, Mode=OneWay}" Height="40"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+        <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="20"/>
+        <ProgressBar Grid.Row="2" Width="300" Height="40" Value="50" BorderBrush="White" LargeChange="0"/>
+    </Grid>
 </Window>
-
-<!--<ListBox Name="lstCars" Margin="5" ItemContainerStyle="{StaticResource ContainerStyle}">
-      </ListBox>-->

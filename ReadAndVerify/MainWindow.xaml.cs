@@ -28,14 +28,14 @@ namespace ReadAndVerify
         {
 
             InitializeComponent();
+            DataContext = this;
             //Project.Create(new List<Project> {
             //    new Project("Мой проект 2", DateTime.Parse("01.10.2018"), DateTime.Parse("10.10.2018")),
             //    new Project("Мой проект 3", DateTime.Parse("30.10.2018"), DateTime.Parse("20.12.2018"))
             //});
-            //_projects = Project.GetProjects();
-            //this.DataContext = _projects;
-            //this.Resources.Add("Projects", _projects);
-            progressBarList.ItemsSource = _projects;
+            Dictionary<string, double> data = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
+            //progressBarList.ItemsSource = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
+            progressBarList.ItemsSource = data;
             CreateDynamicGridView();
         }
 

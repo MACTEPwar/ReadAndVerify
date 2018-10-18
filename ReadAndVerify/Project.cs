@@ -93,9 +93,19 @@ namespace ReadAndVerify
             doc.Save(pathToFile);
         }
 
-        public override string ToString()
+        public static Dictionary<string,double> getTheurrentPercentageOfTheDayOfProjectExecution(List<Project> projects)
         {
-            return "20";
+            Dictionary<string, double> result = new Dictionary<string, double>();
+            foreach(Project _project in projects)
+            {
+                // Сколько всего дней для проекта (100%)
+                int maxDate = _project.FinishDateForProject.Subtract(_project.StartDateForProject).Days;
+                // Сколько прошо дней (кол-во)
+                int curentDate = DateTime.Now.Subtract(_project.StartDateForProject).Days;
+                // Текущий процен пройденых дней
+                result.Add(_project.Title, curentDate * 100 / maxDate);
+            }
+            return result;
         }
 
     }
