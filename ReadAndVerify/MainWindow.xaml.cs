@@ -28,29 +28,57 @@ namespace ReadAndVerify
         {
 
             InitializeComponent();
+            programMenu.Visibility = Visibility.Hidden;
             DataContext = this;
             //Project.Create(new List<Project> {
             //    new Project("Мой проект 2", DateTime.Parse("01.10.2018"), DateTime.Parse("10.10.2018")),
             //    new Project("Мой проект 3", DateTime.Parse("30.10.2018"), DateTime.Parse("20.12.2018"))
             //});
             Dictionary<string, double> data = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
-            //progressBarList.ItemsSource = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
             progressBarList.ItemsSource = data;
             CreateDynamicGridView();
         }
 
         private void CreateDynamicGridView()
         {
-            // Create a GridView  
-            //GridView grdView = new GridView();
-            //grdView.AllowsColumnReorder = true;
-            //grdView.ColumnHeaderToolTip = "Project";
-            //GridViewColumn nameColumn = new GridViewColumn();
-            //nameColumn.DisplayMemberBinding = new Binding("Title");
-            //nameColumn.Header = "Project Title";
-            //nameColumn.Width = 120;
-            //grdView.Columns.Add(nameColumn);
-            //ListView1.View = grdView;
+
+        }
+
+        private void MainWindow_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            PasswordWindow pw = new PasswordWindow();
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control && e.Key == Key.R)
+            {
+                if (pw.ShowDialog() == true)
+                {
+                    if (pw.Password == "12")
+                    {
+                        programMenu.Visibility = Visibility.Visible;
+                    }
+                    else MessageBox.Show("Пароль не верный, попробуйте еще раз.","Ошибка ввода пароля", MessageBoxButton.OK, MessageBoxImage.Error );
+                }
+            }
+        }
+
+        /// <summary>
+        /// Закрывает панель админки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            programMenu.Visibility = Visibility.Hidden;
+        }
+
+        /// <summary>
+        /// Изменитб проект
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            UpdateData ud = new UpdateData(_projects);
+            ud.Show();
         }
     }
 }

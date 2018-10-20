@@ -28,3 +28,7 @@ C:\Users\Вредина\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadA
 C:\Users\Вредина\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.csproj.CoreCompileInputs.cache
 C:\Users\Вредина\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.exe
 C:\Users\Вредина\Source\Repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.pdb
+C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\PasswordWindow.g.cs
+C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\PasswordWindow.baml
+C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\UpdateData.g.cs
+C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\UpdateData.baml
