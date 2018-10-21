@@ -23,6 +23,7 @@ namespace ReadAndVerify
     public partial class MainWindow : Window
     {
         private List<Project> _projects = Project.GetProjects();
+        ObservableCollection<MyDictionary> data;
 
         public MainWindow()
         {
@@ -34,7 +35,8 @@ namespace ReadAndVerify
             //    new Project("Мой проект 2", DateTime.Parse("01.10.2018"), DateTime.Parse("10.10.2018")),
             //    new Project("Мой проект 3", DateTime.Parse("30.10.2018"), DateTime.Parse("20.12.2018"))
             //});
-            Dictionary<string, double> data = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
+            //Dictionary<string, double> data = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
+            data = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
             progressBarList.ItemsSource = data;
             CreateDynamicGridView();
         }
@@ -79,6 +81,11 @@ namespace ReadAndVerify
         {
             UpdateData ud = new UpdateData(_projects);
             ud.Show();
+        }
+
+        private void test_Click(object sender, RoutedEventArgs e)
+        {
+            data.RemoveAt(0);
         }
     }
 }
