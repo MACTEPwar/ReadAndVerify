@@ -44,7 +44,8 @@ namespace ReadAndVerify
                     FrameworkElementFactory textF = new FrameworkElementFactory(typeof(TextBlock));
                     Binding bind = new Binding(mi.Name)
                     {
-                        StringFormat = "d"
+                        StringFormat = "d",
+                        Mode = BindingMode.TwoWay
                     };
                     textF.SetBinding(TextBlock.TextProperty, bind);
                     DataTemplate dt = new DataTemplate();
@@ -52,7 +53,10 @@ namespace ReadAndVerify
 
                     //Режим редактирования
                     FrameworkElementFactory dateF = new FrameworkElementFactory(typeof(DatePicker));
-                    Binding bind2 = new Binding(mi.Name);
+                    Binding bind2 = new Binding(mi.Name)
+                    {
+                        Mode = BindingMode.TwoWay
+                    };
                     dateF.SetBinding(DatePicker.SelectedDateProperty, bind2);
                     DataTemplate dt2 = new DataTemplate();
                     dt2.VisualTree = dateF;
@@ -68,11 +72,14 @@ namespace ReadAndVerify
                 }
                 DataGridTextColumn dgc = new DataGridTextColumn();
                 dgc.Header = mi.Name;
-                dgc.Binding = new Binding(mi.Name);
+                dgc.Binding = new Binding(mi.Name)
+                {
+                    Mode = BindingMode.TwoWay
+                };
                 dGrid.Columns.Add(dgc);
             }
 
-            
+
         }
 
         private void dGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -133,6 +140,11 @@ namespace ReadAndVerify
             //    dgc.Binding = new Binding(mi.Name);
             //    dGrid.Columns.Add(dgc);
             //}
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
     }
 }

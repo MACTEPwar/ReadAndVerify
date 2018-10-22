@@ -26,6 +26,6 @@
             </DataGrid.Columns>-->
         </DataGrid>
         <Button Margin="0,263,172,0" Grid.Row="1" HorizontalAlignment="Right" Width="257" Height="46" VerticalAlignment="Top">Отмена</Button>
-        <Button Margin="172,263,0,0" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="257" Height="46" VerticalAlignment="Top">Сохранить</Button>
+        <Button Margin="172,263,0,0" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="257" Height="46" VerticalAlignment="Top" Click="Button_Click">Сохранить</Button>
     </Grid>
 </Window>
