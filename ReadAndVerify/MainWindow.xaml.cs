@@ -37,7 +37,7 @@ namespace ReadAndVerify
             //});
             //Dictionary<string, double> data = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
             data = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
-            progressBarList.ItemsSource = data;
+            progressBarList.ItemsSource = _projects;
             CreateDynamicGridView();
         }
 
@@ -82,19 +82,13 @@ namespace ReadAndVerify
             UpdateData ud = new UpdateData(_projects);
             if (ud.ShowDialog() == true)
             {
-                data = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
-                foreach(var p in data)
-                {
-                    MessageBox.Show(p.Key);
-                }
+               
             }
         }
 
         private void test_Click(object sender, RoutedEventArgs e)
         {
-            //data[2].Key = _projects[0].Title;
-            data = Project.getTheurrentPercentageOfTheDayOfProjectExecution(_projects);
-            //MessageBox.Show(_projects[0].Title);
+
         }
     }
 }

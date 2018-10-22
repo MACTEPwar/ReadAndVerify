@@ -31,3 +31,5 @@ C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\Passw
 C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\PasswordWindow.baml
 C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\UpdateData.g.cs
 C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\UpdateData.baml
+C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.csprojAssemblyReference.cache
+C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\GeneratedInternalTypeHelper.g.cs

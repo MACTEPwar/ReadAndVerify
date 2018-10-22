@@ -8,6 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#20201f" Foreground="White" WindowState="Maximized" KeyUp="MainWindow_KeyUp">
     <Window.Resources>
+        <ObjectDataProvider x:Key="getPersent" MethodName="test" ObjectType="{x:Type local:Project}">
+        </ObjectDataProvider>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -39,8 +41,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="0 5 0 5">
-                            <TextBlock Text="{Binding Path=Key, Mode=TwoWay, UpdateSourceTrigger=Default}" Margin="0 0 0 10" Foreground="White"/>
-                            <ProgressBar  Value="{Binding Path=Value, Mode=TwoWay, UpdateSourceTrigger=Default}" Height="40"/>
+                            <TextBlock Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=Default}" Margin="0 0 0 10" Foreground="White"/>
+                            <ProgressBar  Value="{Binding Path=DayForProject, Mode=TwoWay, UpdateSourceTrigger=Default}" Height="40"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -48,7 +50,7 @@
         </ScrollViewer>
         <GridSplitter Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="20"/>
         <StackPanel Grid.Row="3">
-            <ProgressBar Width="300" Height="40" Value="50" BorderBrush="White" LargeChange="0"/>
+            
             <Button Margin=" 100" Click="test_Click">Тест</Button>
         </StackPanel>
         
