@@ -33,3 +33,5 @@ C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\Updat
 C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\UpdateData.baml
 C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\ReadAndVerify.csprojAssemblyReference.cache
 C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\AddDataForProject.g.cs
+C:\Users\Вредина\source\repos\ReadAndVerify\ReadAndVerify\obj\Debug\AddDataForProject.baml

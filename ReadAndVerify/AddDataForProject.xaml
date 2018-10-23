@@ -1,0 +1,26 @@
+﻿<Window x:Class="ReadAndVerify.AddDataForProject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReadAndVerify"
+        mc:Ignorable="d"
+        Title="Добавление нового проекта
+        " Height="197.864" Width="287.887" ResizeMode="NoResize" WindowState="Normal" WindowStartupLocation="CenterScreen">
+    <StackPanel x:Name="panelView" Margin="5 10 5 5">
+        <TextBlock>Введите название проекта:</TextBlock>
+        <TextBox x:Name="title"></TextBox>
+        <TextBlock>Введите дату начала проекта:</TextBlock>
+        <DatePicker x:Name="startD"></DatePicker>
+        <TextBlock>Введите дату окончания проекта:</TextBlock>
+        <DatePicker x:Name="finishD"></DatePicker>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="10 10 10 5" Click="Ok" x:Name="Ok_b">Отмена</Button>
+            <Button Grid.Column="1" Margin="10 10 10 5" Click="Cancel" x:Name="Cancel_b">Сохранить</Button>
+        </Grid>
+    </StackPanel>
+</Window>

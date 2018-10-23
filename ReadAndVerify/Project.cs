@@ -50,7 +50,14 @@ namespace ReadAndVerify
             }
         }
         [XmlElement("FinishDate")]
-        public DateTime FinishDateForProject { get { return finishDateForProject; } set {
+        public DateTime FinishDateForProject
+        {
+            get
+            {
+                return finishDateForProject;
+            }
+            set
+            {
                 finishDateForProject = value;
                 // Сколько всего дней для проекта (100%)
                 int maxDate = FinishDateForProject.Subtract(StartDateForProject).Days;
@@ -58,13 +65,15 @@ namespace ReadAndVerify
                 int curentDate = DateTime.Now.Subtract(StartDateForProject).Days;
                 // Текущий процен пройденых дней
                 DayForProject = curentDate * 100 / maxDate;
-                RaisePropertyChanged("FinishDateForProject"); } }
+                RaisePropertyChanged("FinishDateForProject");
+            }
+        }
         [XmlIgnore]
         public double DayForProject { get { return dayForProject; } set { dayForProject = value; RaisePropertyChanged("DayForProject"); } }
 
         public Project() { }
 
-        public Project(string title,DateTime startDate, DateTime finishDate)
+        public Project(string title, DateTime startDate, DateTime finishDate)
         {
             Title = title;
             StartDateForProject = startDate;
@@ -83,7 +92,7 @@ namespace ReadAndVerify
             xRoot.ElementName = "Projects";
             xRoot.IsNullable = true;
 
-            XmlSerializer xSeriz = new XmlSerializer(typeof(Project[]),xRoot);
+            XmlSerializer xSeriz = new XmlSerializer(typeof(Project[]), xRoot);
             List<Project> projects = new List<Project>();
             using (FileStream fs = new FileStream(pathToFile, FileMode.OpenOrCreate))
             {
@@ -132,21 +141,6 @@ namespace ReadAndVerify
                 }
             }
             doc.Save(pathToFile);
-        }
-        
-        public static ObservableCollection<MyDictionary> getTheurrentPercentageOfTheDayOfProjectExecution(List<Project> projects)
-        {
-            ObservableCollection<MyDictionary> result = new ObservableCollection<MyDictionary>();
-            foreach (Project _project in projects)
-            {
-                // Сколько всего дней для проекта (100%)
-                int maxDate = _project.FinishDateForProject.Subtract(_project.StartDateForProject).Days;
-                // Сколько прошо дней (кол-во)
-                int curentDate = DateTime.Now.Subtract(_project.StartDateForProject).Days;
-                // Текущий процен пройденых дней
-                result.Add(new MyDictionary(_project.Title, curentDate * 100 / maxDate));
-            }
-            return result;
         }
 
         public static void Update(List<Project> projects)
