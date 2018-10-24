@@ -22,8 +22,7 @@ namespace ReadAndVerify
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Project> _projects = Project.GetProjects();
-        //ObservableCollection<MyDictionary> data;
+        private ObservableCollection<Project> _projects = Project.GetProjects();
 
         public MainWindow()
         {
@@ -77,28 +76,22 @@ namespace ReadAndVerify
         /// <param name="e"></param>
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            List<Project>  tempProject = new List<Project>();
-            tempProject = Project.GetProjects();
             UpdateData ud = new UpdateData(_projects);
             // Если нажали "Сохранить"
             if (ud.ShowDialog() == true)
             {
-               
+                Project.Update(_projects);
             }
             else
             {
-                for(int i = 0; i < _projects.Count; i++)
-                {
-                    _projects[i].Title = tempProject[i].Title;
-                    _projects[i].StartDateForProject = tempProject[i].StartDateForProject;
-                    _projects[i].FinishDateForProject = tempProject[i].FinishDateForProject;
-                }
+                _projects = Project.GetProjects();
+                progressBarList.ItemsSource = _projects;
             }
         }
-
+        
         private void test_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

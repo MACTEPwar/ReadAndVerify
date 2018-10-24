@@ -19,8 +19,8 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="10 10 10 5" Click="Ok" x:Name="Ok_b">Отмена</Button>
-            <Button Grid.Column="1" Margin="10 10 10 5" Click="Cancel" x:Name="Cancel_b">Сохранить</Button>
+            <Button Grid.Column="0" Margin="10 10 10 5" Click="Cancel" x:Name="Ok_b">Отмена</Button>
+            <Button Grid.Column="1" Margin="10 10 10 5" Click="Ok" x:Name="Cancel_b">Сохранить</Button>
         </Grid>
     </StackPanel>
 </Window>

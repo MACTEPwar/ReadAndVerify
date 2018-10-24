@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -25,9 +26,9 @@ namespace ReadAndVerify
             InitializeComponent();
         }
 
-        List<Project> projects = new List<Project>();
+        ObservableCollection<Project> projects;
 
-        public UpdateData(List<Project> projects)
+        public UpdateData(ObservableCollection<Project> projects)
         {
             InitializeComponent();
             DataContext = this;
@@ -44,7 +45,7 @@ namespace ReadAndVerify
                     FrameworkElementFactory textF = new FrameworkElementFactory(typeof(TextBlock));
                     Binding bind = new Binding(mi.Name)
                     {
-                        UpdateSourceTrigger = UpdateSourceTrigger.Default,
+                        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                         StringFormat = "d",
                         Mode = BindingMode.TwoWay
                     };
@@ -56,7 +57,7 @@ namespace ReadAndVerify
                     FrameworkElementFactory dateF = new FrameworkElementFactory(typeof(DatePicker));
                     Binding bind2 = new Binding(mi.Name)
                     {
-                        UpdateSourceTrigger = UpdateSourceTrigger.Default,
+                        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                         Mode = BindingMode.TwoWay
                     };
                     dateF.SetBinding(DatePicker.SelectedDateProperty, bind2);
@@ -76,18 +77,15 @@ namespace ReadAndVerify
                 dgc.Header = mi.Name;
                 dgc.Binding = new Binding(mi.Name)
                 {
-                    UpdateSourceTrigger = UpdateSourceTrigger.Default,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Mode = BindingMode.TwoWay
                 };
                 dGrid.Columns.Add(dgc);
             }
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            dGrid.CanUserAddRows = false;
             this.DialogResult = true;
         }
 
@@ -96,20 +94,37 @@ namespace ReadAndVerify
             this.DialogResult = false;
         }
 
+        /// <summary>
+        /// Добавляет проект
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add(object sender, RoutedEventArgs e)
         {
-            dGrid.CanUserAddRows = true;
-            //AddDataForProject adfp = new AddDataForProject();
-            //adfp.Show();
-            //adfp.Ok_b.Click += (o, v) =>
-            //{
-            //    dGrid.Items.Add();
-            //};
+            AddDataForProject adfp = new AddDataForProject();
+            if (adfp.ShowDialog() == true)
+            {
+                projects.Add(new Project(adfp.title.Text, DateTime.Parse(adfp.startD.Text), DateTime.Parse(adfp.finishD.Text)));
+            }
         }
 
+        /// <summary>
+        /// Удаляет выделенные элементы из DataGrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete(object sender, RoutedEventArgs e)
         {
-
+            foreach(Project p in new ObservableCollection<Project>(dGrid.SelectedItems.Cast<Project>().ToList()))
+            {
+                for (int i = 0; i < projects.Count; i++)
+                {
+                    if (p == projects[i])
+                    {
+                        projects.RemoveAt(i);
+                    }
+                }
+            }
         }
     }
 }

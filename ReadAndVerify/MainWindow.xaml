@@ -41,8 +41,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="0 5 0 5">
-                            <TextBlock Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=Default}" Margin="0 0 0 10" Foreground="White"/>
-                            <ProgressBar  Value="{Binding Path=DayForProject, Mode=TwoWay, UpdateSourceTrigger=Default}" Height="40"/>
+                            <TextBlock Name="text_block" Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=Default}" Margin="0 0 0 10" Foreground="White"/>
+                            <ProgressBar Name="prog_bar" Value="{Binding Path=DayForProject, Mode=TwoWay, UpdateSourceTrigger=Default}" Height="40"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<Projects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ArrayOfProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Project>
-    <Title>Привет</Title>
+    <Title>Проект "заебок"</Title>
     <StartDate>2018-10-10T00:00:00</StartDate>
     <FinishDate>2018-10-20T00:00:00</FinishDate>
   </Project>
   <Project>
-    <Title>Мой проект 2</Title>
+    <Title>куку</Title>
     <StartDate>2018-10-01T00:00:00</StartDate>
     <FinishDate>2018-10-10T00:00:00</FinishDate>
   </Project>
@@ -15,4 +15,4 @@
     <StartDate>2018-10-16T00:00:00</StartDate>
     <FinishDate>2018-12-20T00:00:00</FinishDate>
   </Project>
-</Projects>
+</ArrayOfProject>

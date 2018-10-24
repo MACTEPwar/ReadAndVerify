@@ -86,18 +86,22 @@ namespace ReadAndVerify
             DayForProject = curentDate * 100 / maxDate;
         }
 
-        public static List<Project> GetProjects()
+        /// <summary>
+        /// Получает все проекты с xml файла (десериализация)
+        /// </summary>
+        /// <returns></returns>
+        public static ObservableCollection<Project> GetProjects()
         {
             XmlRootAttribute xRoot = new XmlRootAttribute();
-            xRoot.ElementName = "Projects";
+            xRoot.ElementName = "ArrayOfProject";
             xRoot.IsNullable = true;
 
             XmlSerializer xSeriz = new XmlSerializer(typeof(Project[]), xRoot);
-            List<Project> projects = new List<Project>();
+            ObservableCollection<Project> projects;
             using (FileStream fs = new FileStream(pathToFile, FileMode.OpenOrCreate))
             {
                 Project[] newprojects = (Project[])xSeriz.Deserialize(fs);
-                projects = newprojects.Cast<Project>().ToList();
+                projects = new ObservableCollection<Project>(newprojects.Cast<Project>().ToList());
             }
             foreach (Project project in projects)
             {
@@ -143,9 +147,17 @@ namespace ReadAndVerify
             doc.Save(pathToFile);
         }
 
-        public static void Update(List<Project> projects)
+        /// <summary>
+        /// Заносит данные в xml файл (сериализация)
+        /// </summary>
+        /// <param name="projects"></param>
+        public static void Update(ObservableCollection<Project> projects)
         {
-
+            XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<Project>));
+            using (FileStream fs = new FileStream(pathToFile, FileMode.Create))
+            {
+                formatter.Serialize(fs, projects);
+            }
         }
 
         protected virtual void RaisePropertyChanged(PropertyChangedEventArgs e)
