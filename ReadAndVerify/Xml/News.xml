@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfNews>
+  <News>
+    <Title>Новость 1</Title>
+    <Discription>Описание новости 1 ffffffffffffffffff f f fd fd fsdf sdfsdf sdf sdf sdf sdf sgdfsdghfhsdf hsdf sdf hsdgf sdf dsf sd gf dbas dbasvdags dfghasfghdfasghd fgasf dghasghdfghasghfd</Discription>
+    <StartDateTime>2018-10-24T16:02:00</StartDateTime>
+  </News>
+  <News>
+    <Title>Новость 2</Title>
+    <Discription>Описание новости 2</Discription>
+    <StartDateTime>2018-10-24T16:02:20</StartDateTime>
+  </News>
+  <News>
+    <Title>Новость 3</Title>
+    <Discription>Описание новости 3</Discription>
+    <StartDateTime>2018-10-24T16:42:20</StartDateTime>
+  </News>
+</ArrayOfNews>

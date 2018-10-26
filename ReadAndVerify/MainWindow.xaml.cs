@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace ReadAndVerify
     public partial class MainWindow : Window
     {
         private ObservableCollection<Project> _projects = Project.GetProjects();
+        private ObservableCollection<News> _news = News.GetNews();
 
         public MainWindow()
         {
@@ -35,6 +37,10 @@ namespace ReadAndVerify
             //    new Project("Мой проект 3", DateTime.Parse("30.10.2018"), DateTime.Parse("20.12.2018"))
             //});
             progressBarList.ItemsSource = _projects;
+            //lBX.Items.Clear();
+            listNews.ItemsSource = _news;
+            
+            //dGridNews.ItemsSource = _news;
             CreateDynamicGridView();
         }
 
@@ -88,10 +94,19 @@ namespace ReadAndVerify
                 progressBarList.ItemsSource = _projects;
             }
         }
-        
+
+         
         private void test_Click(object sender, RoutedEventArgs e)
         {
-            
+            foreach(News n in _news)
+            {
+                MessageBox.Show(n.Title);
+            }
+        }
+
+        private void g1_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            g1.MaxWidth = 600;
         }
     }
 }

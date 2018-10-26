@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("xml/project.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("xml/news.xml")]
 
 

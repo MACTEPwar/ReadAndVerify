@@ -17,6 +17,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" x:Name="programMenu">
             <MenuItem Header="Редактировать данные">
@@ -49,7 +50,52 @@
             </ListBox>
         </ScrollViewer>
         <GridSplitter Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="20"/>
-        <StackPanel Grid.Row="3">
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ListBox Name="listNews" Grid.Column="0" HorizontalContentAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock TextAlignment="Left" TextWrapping="Wrap" Margin="40 10 0 5" Grid.Row="0" Grid.Column="0" Text="{Binding Path=Title}"></TextBlock>
+                            <TextBlock Margin="10 10 10 5" Grid.Row="0" Grid.Column="1" Text="{Binding Path=StartDateTime}"></TextBlock>
+                            <TextBlock TextAlignment="Left" TextWrapping="Wrap" Margin="40 0 10 10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Path=Discription}"></TextBlock>
+                        </Grid>
+                        <!--<DockPanel LastChildFill="True">
+                            <TextBlock DockPanel.Dock="Left" Margin="40 10 0 5" Text="{Binding Path=Title}"></TextBlock>
+                            <TextBlock DockPanel.Dock="Right" Margin="10 10 10 5" Text="{Binding Path=StartDateTime}"></TextBlock>
+                            --><!--<TextBlock DockPanel.Dock="Bottom" TextWrapping="Wrap" Margin="40 0 10 10" Text="{Binding Path=Discription}"></TextBlock>--><!--
+                        </DockPanel>-->
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Name="listNews2" Grid.Column="1" HorizontalContentAlignment="Stretch">
+                <Grid x:Name="g1" SizeChanged="g1_SizeChanged">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0">Hello</TextBlock>
+                    <TextBlock TextAlignment="Right" Grid.Column="1" Grid.Row="0">02.02.2010</TextBlock>
+                    <TextBlock TextAlignment="Left" TextWrapping="Wrap" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0">hfdsahhs agjfgadddddd asdasdddd dddddd dddddajkjf ahdfjafja jasdsad asddgf</TextBlock>
+                </Grid>
+            </ListBox>
+        </Grid>
+        <StackPanel Grid.Row="4">
             
             <Button Margin=" 100" Click="test_Click">Тест</Button>
         </StackPanel>

@@ -58,6 +58,7 @@
     <Compile Include="AddDataForProject.xaml.cs">
       <DependentUpon>AddDataForProject.xaml</DependentUpon>
     </Compile>
+    <Compile Include="News.cs" />
     <Compile Include="UpdateData.xaml.cs">
       <DependentUpon>UpdateData.xaml</DependentUpon>
     </Compile>
@@ -117,7 +118,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Xml\Project.xml" />
+    <Resource Include="Xml\Project.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Xml\News.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
